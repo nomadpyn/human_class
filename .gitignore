@@ -1,0 +1,17 @@
+
+.vs/human_class/v17/.suo
+*.db
+*.ipch
+*.vcxproj
+*.filters
+*.user
+*.obj
+*.log
+*.recipe
+*.tlog
+*.txt
+*.idb
+*.pdb
+*.ilk
+*.exe
+*.sln
