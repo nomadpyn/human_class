@@ -13,28 +13,30 @@ private:
 	int year;
 	static int count;
 public:
-	Human(int idP, const char* fnameP, const char* nameP, const char* snameP, int dayP, int monthP, int yearP) : day{ dayP }, month{ monthP }, year{ yearP } {
+	Human(int idP, const char* fnameP, const char* nameP, const char* snameP, int dayP, int monthP, int yearP) 
+		: day{ dayP }, month{ monthP }, year{ yearP } {
 		this->id = idP;
-		int length = strlen(fnameP);
-		this->fname = new char[length];
+		int length1 = strlen(fnameP)+1;
+		this->fname = new char[length1];
 		int i = 0;
-		for (i = 0; i < length; i++)
+		for (i = 0; i < length1; ++i)
 			this->fname[i] = fnameP[i];
-		this->fname[length] = '\0';
-		length = strlen(nameP);
-		this->name = new char[length];
-		for (i = 0; i < length; i++)
+		int length2 = strlen(nameP)+1;
+		this->name = new char[length2];
+		for (i = 0; i < length2; i++)
 			this->name[i] = nameP[i];
-		this->name[length] = '\0';
-		length = strlen(snameP);
-		this->sname = new char[length];
-		for (i = 0; i < length; i++)
+		int length3 = strlen(snameP)+1;
+		this->sname = new char[length3];
+		for (i = 0; i < length3; i++)
 			this->sname[i] = snameP[i];
-		this->sname[length] = '\0';
 		countHuman();
 		}
 	Human(): Human(0,"No","No","No",1,1,1900) {}
-	~Human() {}
+	~Human() {
+		delete[] this->fname;
+		delete[] this->name;
+		delete[] this->sname;
+	}
 	void countHuman();
 	void print();
 	void setId(int idP);

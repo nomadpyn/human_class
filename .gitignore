@@ -15,3 +15,8 @@
 *.ilk
 *.exe
 *.sln
+*.vsidx
+*.lock
+*.db-shm
+*.db-wal
+*.opendb

@@ -17,22 +17,25 @@ void Human::setId(int idP) {
 	this->id = idP;
 }
 void Human::setFname(const char* fnameP) {
-	int length = strlen(fnameP);
+	delete[] this->fname;
+	int length = strlen(fnameP)+1;
+	this->fname = new char[length];
 	for (int i = 0; i < length; i++)
 		this->fname[i] = fnameP[i];
-	this->fname[length] = '\0';
 }
 void Human::setName(const char* nameP) {
-	int length = strlen(nameP);
+	delete[]this->name;
+	int length = strlen(nameP)+1;
+	this->name = new char[length];
 	for (int i = 0; i < length; i++)
 		this->name[i] = nameP[i];
-	this->name[length] = '\0';
 }
 void Human::setSname(const char* snameP) {
-	int length = strlen(snameP);
+	delete[]this->sname;
+	int length = strlen(snameP)+1;
+	this->sname = new char[length];
 	for (int i = 0; i < length; i++)
 		this->sname[i] = snameP[i];
-	this->sname[length] = '\0';
 }
 void Human::setData(int dayP, int monthP, int yearP) {
 	this->day = dayP;
@@ -41,7 +44,6 @@ void Human::setData(int dayP, int monthP, int yearP) {
 }
 void Human::countHuman() {
 	count++;
-	cout << "Plus one human to your army!" << endl;
 	cout << "Human in stack " << count << endl;
 }
 int Human::count{ 0 };

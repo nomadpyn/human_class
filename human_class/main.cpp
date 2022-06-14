@@ -13,7 +13,9 @@ int main() {
 	a.setSname("Petrovich");
 	a.setData(12, 5, 1990);
 	a.print();
-	Human b;
+	Human b(2, "Ivanov", "Ivan", "Ivanovich", 28, 2, 1985);
+	b.print();
 	Human c;
+	c.print();
 	return 0;
 }
