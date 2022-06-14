@@ -15,7 +15,7 @@ int main() {
 	a.print();
 	Human b(2, "Ivanov", "Ivan", "Ivanovich", 28, 2, 1985);
 	b.print();
-	Human c;
+	Human c(b);
 	c.print();
 	return 0;
 }

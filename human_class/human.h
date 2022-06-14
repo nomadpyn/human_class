@@ -32,6 +32,22 @@ public:
 		countHuman();
 		}
 	Human(): Human(0,"No","No","No",1,1,1900) {}
+	Human(const Human& other) : id{ other.id }, day{ other.day }, month{ other.month }, year{ other.year }{
+		int length1 = strlen(other.fname) + 1;
+		this->fname = new char[length1];
+		int i = 0;
+		for (i = 0; i < length1; ++i)
+			this->fname[i] = other.fname[i];
+		int length2 = strlen(other.name) + 1;
+		this->name = new char[length2];
+		for (i = 0; i < length2; i++)
+			this->name[i] = other.name[i];
+		int length3 = strlen(other.sname) + 1;
+		this->sname = new char[length3];
+		for (i = 0; i < length3; i++)
+			this->sname[i] = other.sname[i];
+		countHuman();
+	}
 	~Human() {
 		delete[] this->fname;
 		delete[] this->name;
