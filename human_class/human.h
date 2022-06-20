@@ -54,7 +54,7 @@ public:
 		delete[] this->sname;
 	}
 	void countHuman();
-	void print();
+	void print() const;
 	void setId(int idP);
 	void setFname(const char* fnameP);
 	void setName(const char* nameP);

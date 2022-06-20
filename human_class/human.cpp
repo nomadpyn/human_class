@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-void Human::print()
+void Human::print() const
 {
 	cout << "ID " << this->id << " | ";
 	cout << "Fname " << this->fname << " | ";
