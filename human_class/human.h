@@ -1,6 +1,6 @@
-#pragma once
+﻿#pragma once
 #include<cstring>
-
+// Класс Человек
 class Human
 {
 private:
@@ -13,6 +13,7 @@ private:
 	int year;
 	static int count;
 public:
+// конструктор с параметрами
 	Human(int idP, const char* fnameP, const char* nameP, const char* snameP, int dayP, int monthP, int yearP) 
 		: day{ dayP }, month{ monthP }, year{ yearP } {
 		this->id = idP;
@@ -31,7 +32,9 @@ public:
 			this->sname[i] = snameP[i];
 		countHuman();
 		}
+// конструктор по умолчанию
 	Human(): Human(0,"No","No","No",1,1,1900) {}
+// конструктор копирования
 	Human(const Human& other) : id{ other.id }, day{ other.day }, month{ other.month }, year{ other.year }{
 		int length1 = strlen(other.fname) + 1;
 		this->fname = new char[length1];
@@ -48,11 +51,13 @@ public:
 			this->sname[i] = other.sname[i];
 		countHuman();
 	}
+// деструктор (очистка динамической памяти)
 	~Human() {
 		delete[] this->fname;
 		delete[] this->name;
 		delete[] this->sname;
 	}
+// объявление методов в заголовочном файле
 	void countHuman();
 	void print() const;
 	void setId(int idP);
